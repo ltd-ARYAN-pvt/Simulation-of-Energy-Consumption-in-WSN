@@ -72,7 +72,7 @@ Communication energy is heavily influenced by the distance between the transmitt
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/wsn-energy-simulation.git
+   git clone https://github.com/ltd-ARYAN-pvt/Simulation-of-Energy-Consumption-in-WSN.git
    ```
 2. Install dependencies:
    ```bash
