@@ -22,6 +22,8 @@ This project simulates energy consumption in a Wireless Sensor Network (WSN) usi
     - [Simulating with Mobile Sink Node](#simulating-with-mobile-sink-node)
   - [Graphical Animation](#graphical-animation)
     - [Running Animations](#running-animations)
+  - [**Dockerfile Explanation**](#dockerfile-explanation)
+  - [Docker Integration and Image Creation](#docker-integration-and-image-creation)
   - [Directory Structure](#directory-structure)
   - [Contributing](#contributing)
   - [License](#license)
@@ -118,6 +120,55 @@ Dynamic visualizations for both static and mobile sink nodes are included in the
    python mobile_node.py
    ```
 4. Watch as the energy consumption and sink node activity are visualized dynamically.
+
+---
+
+## **Dockerfile Explanation**
+The `Dockerfile` is configured as follows:
+
+1. **Base Image**: Uses the lightweight Python 3.11 image.  
+   ```dockerfile
+   FROM python:3.11
+   ```
+
+2. **System Dependencies**: Installs `ffmpeg` required for multimedia processing.  
+   ```dockerfile
+   RUN apt-get update && apt-get install -y ffmpeg && apt-get clean && rm -rf /var/lib/apt/lists/*
+   ```
+
+3. **Python Dependencies**: Installs all required Python packages from `requirements.txt`.  
+   ```dockerfile
+   RUN pip install --no-cache-dir -r requirements.txt
+   ```
+
+4. **Expose Port**: Exposes Streamlit's default port `8501` for external access.  
+   ```dockerfile
+   EXPOSE 8501
+   ```
+
+5. **Run the App**: Launches the Streamlit app when the container starts.  
+   ```dockerfile
+   CMD ["streamlit", "run", "app.py"]
+   ```
+
+
+---
+## Docker Integration and Image Creation
+Follow these steps to build and run the Docker container:
+
+1. **Build the Docker Image**
+   ```bash
+   docker build -t wsn-sim-app .
+   ```
+
+
+2. **Run the Docker Container**
+   ```bash
+   docker run -p 8501:8501 wsn-sim-app
+   ```
+
+3. **Access the App**  
+   Open your browser and go to `http://localhost:8501`.
 
 ---
 
