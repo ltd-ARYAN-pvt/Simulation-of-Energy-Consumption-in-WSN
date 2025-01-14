@@ -1,5 +1,5 @@
 # Simulation of Energy Consumption in Wireless Sensor Networks Using Static and Mobile Sink Nodes
-**Author :- Aryan Pandey** 
+**Author :- Aryan Pandey and Prathviraj Gawali** 
 
 This project simulates energy consumption in a Wireless Sensor Network (WSN) using both static and mobile sink nodes. The simulation showcases how sensor nodes communicate with the sink node and demonstrates the energy efficiency trade-offs between static and mobile sinks.
 
